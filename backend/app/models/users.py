@@ -8,7 +8,7 @@ from pymongo import IndexModel
 
 class User(Document):
     uuid: UUID = Field(default_factory=uuid4)
-    email: Indexed(EmailStr, unique=True)
+    email: Indexed(EmailStr, unique=True)       # optimise les requêtes sur l'email
     first_name: Optional[str] = None
     last_name: Optional[str] = None
     hashed_password: Optional[str] = None
